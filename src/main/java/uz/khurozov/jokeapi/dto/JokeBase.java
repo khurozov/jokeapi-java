@@ -1,13 +1,9 @@
 package uz.khurozov.jokeapi.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import uz.khurozov.jokeapi.constant.Category;
 import uz.khurozov.jokeapi.constant.Lang;
 import uz.khurozov.jokeapi.constant.Type;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class JokeBase {
     private Category category;
     private Type type;
