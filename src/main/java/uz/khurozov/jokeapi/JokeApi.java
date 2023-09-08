@@ -25,11 +25,11 @@ public class JokeApi {
     private static final String JOKE_API_URL = "https://v2.jokeapi.dev";
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public Joke getJoke(JokeFilter filter) throws IOException, InterruptedException {
+    public Joke getJoke(JokeFilter filter) {
         return get(filter, 1);
     }
 
-    public List<Joke> getJokes(JokeFilter filter, int amount) throws IOException, InterruptedException {
+    public List<Joke> getJokes(JokeFilter filter, int amount) {
         if (amount < 1) {
             log.warning("amount " + amount + " is setting back to minimum (1)");
             amount = 1;
@@ -43,7 +43,7 @@ public class JokeApi {
         return jokeResponse.getJokes() != null ? jokeResponse.getJokes() : List.of(jokeResponse);
     }
 
-    private JokeResponse get(JokeFilter filter, int amount) throws IOException, InterruptedException {
+    private JokeResponse get(JokeFilter filter, int amount) {
         try {
             String category;
 
@@ -71,7 +71,7 @@ public class JokeApi {
             }
 
             return jokeResponse;
-        } catch (URISyntaxException e) {
+        } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
