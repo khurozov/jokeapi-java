@@ -12,15 +12,6 @@ work in progress ...
 ``` java
 JokeApi jokeApi = new JokeApi();
 
-JokeFilter filter = new JokeFilter.Builder()
-                .category(Category.Programming)
-                .blacklistFlags(Set.of(Flag.nsfw, Flag.racist))
-                .lang(Lang.en)
-                .idRange(0, 305)
-                .contains("Java")
-                .type(Type.twopart)
-                .build();
-
 // Forming filter:
 
 JokeFilter filter = new JokeFilter.Builder()
