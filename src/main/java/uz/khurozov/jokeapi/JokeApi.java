@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 public class JokeApi {
     private static final Logger log = Logger.getLogger(JokeApi.class.getName());
-    private static final String JOKE_API_URL = "https://v2.jokeapi.dev";
+    private static final String JOKE_API_URL = "https://v2.jokeapi.dev/joke/";
     private static final ObjectMapper mapper = new ObjectMapper();
 
     public Joke getJoke(JokeFilter filter) {
@@ -57,7 +57,7 @@ public class JokeApi {
                 category = commaJoiner.toString();
             }
 
-            URI uri = new URI(JOKE_API_URL + "/joke/" + category + query(filter, amount));
+            URI uri = new URI(JOKE_API_URL + category + query(filter, amount));
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
                     .build();
