@@ -90,12 +90,7 @@ public class JokeBase {
         this.lang = lang;
     }
 
-    public void tellJoke() {
-        if (type == Type.single) {
-            System.out.println(joke);
-        } else {
-            System.out.println(setup);
-            System.out.println(delivery);
-        }
+    public String jokeString() {
+        return type == Type.single ? joke : (setup + "\n" + delivery);
     }
 }
