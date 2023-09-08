@@ -29,6 +29,11 @@ public record JokeFilter(
             return this;
         }
 
+        public Builder category(Category category) {
+            this.categories = Set.of(category);
+            return this;
+        }
+
         public Builder blacklistFlags(Set<Flag> blacklistFlags) {
             this.blacklistFlags = blacklistFlags;
             return this;
