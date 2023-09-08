@@ -7,4 +7,8 @@ public record Flags(
         boolean racist,
         boolean sexist,
         boolean explicit
-) {}
+) {
+    public Flags() {
+        this(false, false, false, false, false, false);
+    }
+}
