@@ -5,7 +5,14 @@ Java wrapper for [JokeApi](https://v2.jokeapi.dev/) of [Sv443](https://sv443.net
 
 ## Installation
 
-work in progress ...
+Add Maven dependency
+```xml
+<dependency>
+    <groupId>uz.khurozov</groupId>
+    <artifactId>jokeapi-java</artifactId>
+    <version>1.0</version>
+</dependency>
+```
 
 ## Usage example
 
